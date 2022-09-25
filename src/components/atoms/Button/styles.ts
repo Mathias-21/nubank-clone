@@ -4,7 +4,7 @@ interface ButtonStyledProps {
   width: string;
 }
 
-export const Container = styled.View<ButtonStyledProps>`
+export const Container = styled.Pressable<ButtonStyledProps>`
   align-items: center;
   justify-content: center;
   width: ${({ width }) => width};

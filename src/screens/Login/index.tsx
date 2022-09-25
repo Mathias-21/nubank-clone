@@ -15,12 +15,14 @@ import { Dimensions } from "react-native";
 import { ArrowLearnMoreIcon } from "../../assets/icons/ArrowLearnMoreIcon";
 import { Switch } from "../../components/atoms/form/Switch";
 import { useForm } from "react-hook-form";
+import { useNavigation } from "@react-navigation/native";
 
 export function Login() {
   const windowHeight = Dimensions.get("window").height + 12;
   const screenWidth = Dimensions.get("screen").width;
 
   const { control } = useForm();
+  const { navigate } = useNavigation();
 
   return (
     <Container>
@@ -40,7 +42,9 @@ export function Login() {
             </AreaKnowMore>
           </AreaExplanation>
           <AreaButtonFooter>
-            <Button fontSize={16}>Usar senha do celular</Button>
+            <Button onPress={() => navigate("TabRoutes")} fontSize={16}>
+              Usar senha do celular
+            </Button>
             <Text
               color="#78777c"
               numberOfLines={2}
